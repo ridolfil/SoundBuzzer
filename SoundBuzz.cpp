@@ -19,7 +19,6 @@ void SoundBuzz::init()
 
     TCCR1 |= 1 << CTC1;     // Set clear timer on compare. See Paragraph 12.3.1 datasheet
     TCCR1 |= 5 << CS10;     //Set the prescaler to 16 bit (for 1MHz)(freq range from 31kHz to 250 Hz)
-    //GTCCR |= 1 << COM1B0;   // Toggle OC1B on Compare Match. Every time the comparator matches the OCR1C the pin goes low or high
     TIMSK |= 1 << OCIE1B;    //Enable timer overflow interrupt
 }
 
@@ -66,6 +65,5 @@ bool SoundBuzz::beeping(){
 }
 
 ISR(TIMER1_COMPB_vect){
-    //increase_counter();
     counter++;
 }
