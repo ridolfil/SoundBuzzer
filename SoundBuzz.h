@@ -8,7 +8,6 @@
 #include <avr/interrupt.h>
 
 
-//static void increase_counter() {counter++;}
 static volatile unsigned int counter;
 
 class SoundBuzz
